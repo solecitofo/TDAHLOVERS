@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Brain, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 interface HeaderNavigationProps {
   emergencyMode: boolean;
@@ -45,6 +46,24 @@ export default function HeaderNavigation({ emergencyMode, setEmergencyMode }: He
           </div>
           
           <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <Link href="/daily">
+                <Button variant="ghost" size="sm">
+                  Vista Diaria
+                </Button>
+              </Link>
+              <Link href="/weekly">
+                <Button variant="ghost" size="sm">
+                  Vista Semanal
+                </Button>
+              </Link>
+              <Link href="/analysis">
+                <Button variant="ghost" size="sm">
+                  Análisis
+                </Button>
+              </Link>
+            </div>
+            
             <Button
               variant={emergencyMode ? "destructive" : "outline"}
               size="sm"
