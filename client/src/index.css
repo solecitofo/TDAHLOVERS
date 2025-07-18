@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(151, 55%, 46%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(45, 93%, 47%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(4, 90%, 58%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  --surface: hsl(60, 9%, 97%);
+  --calm-blue: hsl(207, 89%, 86%);
+  --success-light: hsl(151, 55%, 91%);
+  --warning-light: hsl(45, 93%, 89%);
+  --error-light: hsl(4, 90%, 93%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(151, 55%, 46%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(45, 93%, 47%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(4, 90%, 58%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  --surface: hsl(240, 10%, 3.9%);
+  --calm-blue: hsl(207, 89%, 20%);
+  --success-light: hsl(151, 55%, 15%);
+  --warning-light: hsl(45, 93%, 15%);
+  --error-light: hsl(4, 90%, 15%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-surface text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-surface {
+    background-color: var(--surface);
+  }
+  
+  .bg-calm-blue {
+    background-color: var(--calm-blue);
+  }
+  
+  .bg-success-light {
+    background-color: var(--success-light);
+  }
+  
+  .bg-warning-light {
+    background-color: var(--warning-light);
+  }
+  
+  .bg-error-light {
+    background-color: var(--error-light);
+  }
+  
+  .text-calm-blue {
+    color: var(--calm-blue);
+  }
+  
+  .border-calm-blue {
+    border-color: var(--calm-blue);
+  }
+}
+
+.pomodoro-timer {
+  transition: stroke-dashoffset 1s linear;
+}
+
+.task-step-completed {
+  animation: completed-bounce 0.5s ease-in-out;
+}
+
+@keyframes completed-bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.emergency-mode {
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.mood-selected {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.traffic-light-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.traffic-light-button:active {
+  transform: scale(0.95);
+}
